@@ -31,7 +31,7 @@ function Login () {
             //set local Storage
             localStorage.setItem("auth-token", loginResponse.data.tokenface);
             localStorage.setItem("name", loginResponse.data.displayName);
-            history.push("/index");
+            history.push("/");
         } catch(err){
              
         }
@@ -53,7 +53,7 @@ function Login () {
             //set localStorage
             localStorage.setItem("auth-token", loginResponse.data.tokenface);
             localStorage.setItem("name", loginResponse.data.displayName);
-            history.push("/index");
+            history.push("/");
      }
      //login with normal account
     const submit = async (e) => {
@@ -68,7 +68,7 @@ function Login () {
             //set localStorage
             localStorage.setItem("auth-token", loginResponse.data.token);
             localStorage.setItem("name", loginResponse.data.user.displayName);
-            history.push("/index");
+            history.push("/");
         } catch(err) {
             err.response.data.msg && setError(err.response.data.msg)
         }
