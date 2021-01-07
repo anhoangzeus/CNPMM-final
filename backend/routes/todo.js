@@ -2,7 +2,6 @@ const router = require('express').Router();
 const auth = require('../middleware/auth');
 const ToDo = require('../models/todo.model');
 const jwt = require("jsonwebtoken");
-var todosController = require("../controller/todos.controller");
 
 function requireLogin(req, res, next) {
     let accessToken = req.header("Authorization");
@@ -25,7 +24,7 @@ function requireLogin(req, res, next) {
     });
 }
 router.use(requireLogin);
-router.post("/all",todosController.getall);
+
 
 module.exports = router;
 
